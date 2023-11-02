@@ -1,0 +1,28 @@
+名称 : 威信
+在 :
+工作流_发货 :
+日程安排 :
+ #It is 23:00 International Standard Time, 8 hours Beijing Time, and runs at 7:00 a.m. Beijing Time
+ -克罗 : &#39; 0 23 * * * &#39;
+工作 :
+ #Group all jobs running in the workflow
+建造 :
+ #Define a job named build. The subkey defines the properties of the job
+运行 :ubuntu最新
+步骤 :
+ -使用 :行动/签出@v2
+
+ -名称 :设置Python 3.9
+使用 :行动/setup-python@v2
+具有 :
+python版本 : 3.9.1
+ -名称 :设置时区
+运行 : |
+ cp/usr/share/zoneinfo/Asia/Shanghai/etc/localtime
+ -名称 :安装pip包
+运行 : |
+ python-m pip安装--升级pip
+pip3安装-r要求.txt
+ -名称 : 威信
+运行 : |
+python3主.py
